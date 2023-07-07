@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "d1a6373e-5f06-4ab3-afe6-2822b9fd5706",
+		"name": "Fawry Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25105422"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "MakeDiscount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Admin/MakeDiscount?discount=30&discountChoice=1&serviceChoice=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Admin",
+								"MakeDiscount"
+							],
+							"query": [
+								{
+									"key": "discount",
+									"value": "30"
+								},
+								{
+									"key": "discountChoice",
+									"value": "1"
+								},
+								{
+									"key": "serviceChoice",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listPaymentTransactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Admin/ListPaymentTransactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Admin",
+								"ListPaymentTransactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listWalletTransactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Admin/ListAddtoWalletTransactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Admin",
+								"ListAddtoWalletTransactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listRefundTransactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Admin/ListRefundTransactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Admin",
+								"ListRefundTransactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HandleTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Admin/HandleRefund?id=1&state=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Admin",
+								"HandleRefund"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "state",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"email\":\"gmail\",\r\n    \"password\":\"123\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Customer/Signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Customer",
+								"Signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"email\":\"hotmail\",\r\n    \"password\":\"123\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Customer/SignUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Customer",
+								"SignUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkServiceDiscount",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"email\":\"gmail\",\r\n    \"password\":\"123\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Customer/checkServiceDiscount?choice=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Customer",
+								"checkServiceDiscount"
+							],
+							"query": [
+								{
+									"key": "choice",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "makeService",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"email\":\"gmail\",\r\n    \"password\":\"123\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Customer/makeService?serviceChoice=2&receiptChoice=1&serviceProviderChoice=3&paymentChoice=3&amount=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Customer",
+								"makeService"
+							],
+							"query": [
+								{
+									"key": "serviceChoice",
+									"value": "2"
+								},
+								{
+									"key": "receiptChoice",
+									"value": "1"
+								},
+								{
+									"key": "serviceProviderChoice",
+									"value": "3"
+								},
+								{
+									"key": "paymentChoice",
+									"value": "3"
+								},
+								{
+									"key": "amount",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddToWallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"email\":\"gmail\",\r\n    \"password\":\"123\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Customer/AddToWallet?amount=200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Customer",
+								"AddToWallet"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RefundRequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"email\":\"gmail\",\r\n    \"password\":\"123\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Customer/RefundRequest?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Customer",
+								"RefundRequest"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchService",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"email\":\"gmail\",\r\n    \"password\":\"123\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Customer/SearchService?service=InternetPayment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Customer",
+								"SearchService"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "InternetPayment"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

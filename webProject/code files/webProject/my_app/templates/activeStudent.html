@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="Utf-8">
+    <meta name="description" content="page of active student">
+    <link rel="stylesheet" href="{% static 'css/Active_student.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>active students</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        
+         a.button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: initial;
+            }
+        button {
+            width: 75px;
+            height: 40px;
+            background-color: #DAAD86;
+            border-style: none;
+            border-radius: 5px;
+            color: #06314b;
+            font-weight: 100;
+            transition: 0.4s ease;
+        }
+        button:hover{
+            background-color: #e7c2a1;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Table is for illustration only, real table will be fetched from data base in upcoming phases-->
+    <nav class="navbar">
+        <img src="{% static 'img/fcaiLogo.png' %} " alt="Photo" width="100" class="logo">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href= "{% url 'add' %}">Add Student</a></li>
+            <li><a href="{% url 'search' %}">Edit Student</a></li>
+            <li><a href="{% url 'active' %}">Active students</a></li>
+            <li><a href="{% url 'all' %}">Student's list</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        
+        <table class="table_content">
+
+            <thead height="30px">
+                <th>Student Name</th>
+                <th>ID</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th></th>
+
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{student.name}}</td>
+                    <td>{{student.id}}</td>
+                    <td>{{student.department}}</td>
+                    <td>{{student.status}}</td>
+                    <td><form action="{% url 'department' student.id %}" method="get">
+                        <button type="submit">Assign department</button>
+                    </form></td>
+                    
+                    <!-- <td>
+                        <form action="{% url 'edit' student.id %}" method="get">
+                            <button type="submit">Edit</button>
+                        </form>
+                    </td>-->
+                    
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <h3><b>Student Affairs</b></h3>
+            <p>Official Student Affairs website for the<br>
+                faculty of computers and artifical intellegence Cairo University</p>
+            <!--<h3>Contact Us</h3>-->
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/FacultyofComputersandArtificialIntelligence" target="blank"><i
+                            class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="mailto:fci.student@fci-cu.edu.eg" target="blank"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=0201156263699" target="blank"><i
+                            class="fa fa-whatsapp"></i></a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p>copyright &copy;2022 FCAI.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

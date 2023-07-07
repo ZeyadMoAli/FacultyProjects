@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    {% load static %} 
+<head>
+    <meta.charset="UTF-8" />
+    <title>Student Affairs website</title>
+    <link rel="stylesheet" href="{% static 'css/LoginPage.css' %} ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+    <div class="content">
+        <div id="Welcome">
+            <img src="{% static 'img/fcaiLogo.png' %} " alt="Photo" width="100" class="logo">
+
+        </div>
+
+        <div class="login-form">
+            <header>
+                <h1>Welcome to<br>FCAI Student Affairs website </h1>
+                <h3>Login here</h3>
+            </header>
+            {% if messages  %}
+                 {% for message in messages  %}
+                 <div class="alert alert-danger" role="alert">
+                    {{message}}
+                  </div>
+                {% endfor %}
+            {% endif %}
+
+            
+
+            <form id="form" action="" aria-required="true" method=POST>
+                {% csrf_token %}
+                <div class="field">
+                    <span class="fa fa-user"></span>
+                    <input type="text" name="username" id="username" placeholder="Email" required autofocus
+                        autocomplete="off">
+                </div>
+
+                <div class="field password">
+                    <span class="fa fa-lock"></span>
+                    <input type="password" name="password" id="pass" required minlength="8" placeholder="password">
+                </div>
+
+                <div class="field sub">
+
+                    <input type="submit" value="LOGIN">
+                    </a>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    
+    {% block javascribt %}
+    
+    {% endblock  %}
+    <script>
+        $("#username").change(function(){
+          var username=$(this).val();
+          $.ajax({
+             
+              data:{
+                  'username'=username
+              },
+              dataType:'json',
+              success:function(data){
+                  if(data.is_taken){
+                      alert("error");
+                  }
+                }
+          });
+
+
+
+        });
+
+
+    </script>
+
+
+
+    
+ 
+    <footer>
+        <div class="footer-content">
+            <h3><b>Student Affairs</b></h3>
+            <p>Official Student Affairs website for the<br>
+                faculty of computers and artifical intellegence Cairo University</p>
+            <!--<h3>Contact Us</h3>-->
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/FacultyofComputersandArtificialIntelligence"><i
+                            class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="mailto:fci.student@fci-cu.edu.eg"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=0201156263699"><i class="fa fa-whatsapp"></i></a></li>
+            </ul>
+
+            <div class="footer-bottom">
+                <p>copyright &copy;2022 FCAI.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

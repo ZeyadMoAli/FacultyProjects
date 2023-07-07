@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    {% load static %} 
+<head>
+    <meta.charset="UTF-8" />
+    <title>Student Affairs website</title>
+    <link rel="stylesheet" href="{% static 'css/FirstHomePage.CSS' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="{% static 'img/fcaiLogo.png' %} " alt="Photo" width="100" class="logo">
+
+    </nav>
+    <div class="container">
+        <div class="card" id="studentPage">
+            <div class="card1">
+            </div>
+            <a href="{% url 'login' %}"><img src= {% static 'img/student.png' %}>Student Affairs</a>
+        </div>
+        <div class="card">
+            <div class="card2">
+            </div>
+            <a href="#">
+                <img src={% static 'img/higher studies.png' %}>
+
+                Higher studies</a>
+        </div>
+        <div class="card">
+            <div class="card3">
+            </div>
+            <a href="#"><img src={% static 'img/human resorces.png' %}>human resources</a>
+        </div>
+        <div class="card">
+            <div class="card4"></div>
+            <a href="#"><img src={% static 'img/laboratery tracking.png' %}>laboratory tracking</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3><b>Student Affairs</b></h3>
+            <p>Official Student Affairs website for the<br>
+                faculty of computers and artifical intellegence Cairo University</p>
+            <!--<h3>Contact Us</h3>-->
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/FacultyofComputersandArtificialIntelligence"><i
+                            class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="mailto:fci.student@fci-cu.edu.eg"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=0201156263699"><i class="fa fa-whatsapp"></i></a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p>copyright &copy;2022 FCAI.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

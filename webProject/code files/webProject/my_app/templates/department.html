@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    {% load static %} 
+<head>
+    <title>Department Assignment</title>
+    <link rel="stylesheet" href="{% static 'css/department.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<nav class="navbar">
+
+    <body>
+        <img src="{% static 'img/fcaiLogo.png' %} " alt="Photo" width="100" class="logo">
+
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href= "{% url 'add' %}">Add Student</a></li>
+            <li><a href="{% url 'search' %}">Edit Student</a></li>
+            <li><a href="{% url 'active' %}">Active students</a></li>
+            <li><a href="{% url 'all' %}">Student's list</a></li>
+        </ul>
+
+</nav>
+<section class="form">
+    <form onsubmit="return alert('{{message}}');" action="" id="form" method="POST">
+        {% csrf_token %}
+        <h2>Assign Department</h2>
+        <div class="field name">
+            <input id="name" type="text" placeholder="{{student.name}}" readonly>
+        </div>
+        <br>
+        <div class="field id">
+            <input id="id" type="text" placeholder="{{student.id}}" readonly>
+        </div>
+
+        <br>
+
+        
+         <div class="field department">
+                <!--placeholder="{{student.department}}-->
+                <br>
+                <input list="dep" name="department" class="typing" >
+                <datalist id="dep">
+                    <option value="General"></option>
+                    <option value="Computer Science">
+                    <option value="Artificial Intelligence">
+                    <option value="Information Technology">
+                    <option value="Information Systems">
+                    <option value="Decision Support">
+                </datalist>
+            </div>
+
+        <br>
+        <div class="field sub">
+            
+            <input type="submit" value="Save Changes" class="button">
+        </div>
+    </form>
+</section>
+<footer>
+    <div class="footer-content">
+        <h3><b>Student Affairs</b></h3>
+        <p>Official Student Affairs website for the<br>
+            faculty of computers and artifical intellegence Cairo University</p>
+        <ul class="socials">
+            <li><a href="https://www.facebook.com/FacultyofComputersandArtificialIntelligence"><i
+                        class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="mailto:fci.student@fci-cu.edu.eg"><i class="fa fa-envelope"></i></a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=0201156263699"><i class="fa fa-whatsapp"></i></a></li>
+        </ul>
+        <div class="footer-bottom">
+            <p>copyright &copy;2022 FCAI.</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

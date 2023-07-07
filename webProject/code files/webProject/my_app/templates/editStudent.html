@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Edit new student to system">
+    <title>Edit</title>
+    <link rel="stylesheet" href="{% static 'css/editStudent.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../JavaScript/validation.js"></script>
+   
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <img src="{% static 'img/fcaiLogo.png' %} " alt="Photo" width="100" class="logo">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href= "{% url 'add' %}">Add Student</a></li>
+            <li><a href="{% url 'search' %}">Edit Student</a></li>
+            <li><a href="{% url 'active' %}">Active students</a></li>
+            <li><a href="{% url 'all' %}">Student's list</a></li>
+        </ul>
+    </nav>
+
+    <section class="addstudent">
+
+        <form onsubmit=" validat();" action="" id="form" method="POST">
+            {% csrf_token %}
+            
+            <p>Edit Student</p>
+            <div class="name">
+                <label for="name"><b>Student name:<b></label>
+                <br>
+                <input type="text" name="name" id="usernams" required placeholder="Full name" 
+                    class="typing" value="{{searched.name}}">
+                <br>
+            </div>
+            <div class="mobile num">
+                <label for="mob"><b>mobile number:<b></label>
+                <br>
+                <input type="text" name="mobileNumber" id="mobile" placeholder="Phone Number" value="{{searched.mobileNumber}}" class="typing" value="{{searched.mobileNumber}}">
+                <br>
+            </div>
+            <div class="gender">
+
+                <label for="gender"><b>Gender:<b></label>
+                <input type="radio" name="gender" value="male" id="male"  checked>
+                <label for="male" checked>Male</label>
+                <input type="radio" name="gender" id="female" value="female"  checked>
+                <label for="female">Female</label>
+            </div>
+            <div class="date of birth">
+                <label for="date">date of birth:</label>
+                <br>
+                <input type="date" name="dateOfBirth" id="date" class="typing" placeholder="Date of birth" value="{{searched.dateOfBirth}}">
+            </div>
+            <div class="id">
+                <label for="id"><b>ID:<b></label>
+                <br>
+                <input type="text" name="id" id="id" placeholder="ID" class="typing" value="{{searched.id}}" disabled>
+                <br>
+            </div>
+            <div class="level">
+                <label for="level">choose level:</label>
+                <br>
+                <input list="lev" name="level" required class="typing" value="{{searched.level}}">
+                <datalist id="lev">
+                    <option value="1" selected>level 1</option>
+                    <option value="2" selected >level 2</option>
+                    <option value="3"  selected >level 3</option>
+                    <option value="4"  selected >level 4</option>
+                </datalist>
+            </div>
+            <div class="departement">
+                <label for="dep">department:</label>
+                <br>
+                <input list="dep" name="department" class="typing" placeholder="Department" value="{{searched.department}}" readonly >
+                <datalist id="dep" disabled>
+                    <option value="General"></option>
+                    <option value="Computer Science">
+                    <option value="Artificial Intelligence">
+                    <option value="Information Technology">
+                    <option value="Information Systems">
+                    <option value="Decision Support">
+
+                </datalist>
+            </div>
+            <div class="GPA">
+                <label for="GPA"><b>GPA:<b></label>
+                <br>
+                <input type="text" name="GPA" id="GPA" value="{{searched.GPA}}" required placeholder="GPA" class="typing">
+                <br>
+            </div>
+            <div class="status">
+                <label for="status">status:</label>
+                <br>
+            
+                <input list="stat" name="status" required  class="typing" value="{{searched.status}}" >
+                <datalist id="stat">
+                    <option value="Active" selected class="typing"></option>
+                    <option value="in_active" class="typing"></option>
+                </datalist>
+
+            </div>
+            <input type="submit" value="Save Changes" class="button">
+            
+        </form>
+
+    </section>
+   
+
+    
+    
+
+
+
+    
+    <footer>
+        <div class="footer-content">
+            <h3><b>Student Affairs</b></h3>
+            <p>Official Student Affairs website for the<br>
+                faculty of computers and artifical intellegence Cairo University</p>
+            <!--<h3>Contact Us</h3>-->
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/FacultyofComputersandArtificialIntelligence"><i
+                            class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="mailto:fci.student@fci-cu.edu.eg"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=0201156263699"><i class="fa fa-whatsapp"></i></a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p>copyright &copy;2022 FCAI.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

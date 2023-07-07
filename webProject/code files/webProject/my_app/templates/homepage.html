@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    {% load static %} 
+<head>
+    <meta.charset="UTF-8" />
+    <title>Student Affairs website</title>
+    <link rel="stylesheet" href="{% static 'css/homePage.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="{% static 'img/fcaiLogo.png' %} " alt="Photo" width="100" class="logo">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href= "{% url 'add' %}">Add Student</a></li>
+            <li><a href="{% url 'search' %}">Edit Student</a></li>
+            <li><a href="{% url 'active' %}">Active students</a></li>
+            <li><a href="{% url 'all' %}">Student's list</a></li>
+            <li><a href={% url 'login' %}>Sign out</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card1">
+            </div>
+            <a href="{% url 'add' %}"><img src="{% static 'img/AddStudent.png' %} ">Add Student</a>
+        </div>
+        
+        <div class="card">
+            <div class="card3">
+            </div>
+            <a href="{% url 'search' %}"><img src="{% static 'img/Edit Student.png' %} ">Edit Student</a>
+        </div>
+        <div class="card">
+            <div class="card4"></div>
+            <a href="{% url 'active' %}"><img src="{% static 'img/ActivStudents.png' %} ">Active students</a>
+        </div>
+        <div class="card">
+
+            <a href="{% url 'all' %}"><img src="{% static 'img/StudentList.png' %} ">Student's list</a>
+        </div>
+    </div>
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <h3><b>Student Affairs</b></h3>
+            <p>Official Student Affairs website for the<br>
+                faculty of computers and artifical intellegence Cairo University</p>
+            <!--<h3>Contact Us</h3>-->
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/FacultyofComputersandArtificialIntelligence"><i
+                            class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="mailto:fci.student@fci-cu.edu.eg"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=0201156263699"><i class="fa fa-whatsapp"></i></a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p>copyright &copy;2022 FCAI.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

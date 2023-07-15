@@ -1,0 +1,3 @@
+D:/reopsOnly/facultyProjects/coputerGraphicsProject/cmake-build-debug/CMakeFiles/coputerGraphicsProject.dir
+D:/reopsOnly/facultyProjects/coputerGraphicsProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/reopsOnly/facultyProjects/coputerGraphicsProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
